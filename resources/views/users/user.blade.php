@@ -13,6 +13,11 @@
         >
         </follow-button>
       @endif
+      @if( Auth::id() === $user->id )
+      <div>
+        <a href="{{ route('users.unregister') }}" class="btn btn-danger shadow-none p-2 ml-15 position-absolute" style="right:15px;">アカウントを削除する</a>
+      </div>
+      @endif
     </div>
     <h2 class="h5 card-title m-0">
       <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
