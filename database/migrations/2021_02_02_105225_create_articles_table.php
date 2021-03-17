@@ -19,6 +19,8 @@ class CreateArticlesTable extends Migration
             $table->text('body');
             $table->bigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->bigInteger('reply_to_id')->nullable();
+            $table->foreign('reply_to_id')->references('id')->on('articles')->onDelete('cascade');
             $table->timestamps();
         });
     }

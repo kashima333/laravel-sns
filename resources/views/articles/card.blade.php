@@ -62,6 +62,20 @@
       </a>
     </h3>
     <div class="card-text">
+    @if( $article->hasReply() )
+      true
+    @else
+      false
+    @endif
+    </div>
+    <div class="card-text">
+    @if( $article->doReply() )
+      true
+    @else
+      false
+    @endif
+    </div>
+    <div class="card-text">
       {{ $article->body }}
     </div>
   </div>
